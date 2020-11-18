@@ -40,7 +40,6 @@ export default {
   },
   mutations: {
     setBreadCrumb (state, route) {
-      console.log( state, route,'参数--' )
       state.breadCrumbList = getBreadCrumbList(route, state.homeRoute)
     },
     setHomeRoute (state, routes) {

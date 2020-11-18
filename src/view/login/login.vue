@@ -18,6 +18,7 @@
 <script>
 import LoginForm from '@/components/login-form'
 import { mapActions } from 'vuex'
+import Cookies from 'js-cookie'
 export default {
   components: {
     LoginForm
@@ -28,6 +29,8 @@ export default {
       'getUserInfo'
     ]),
     handleSubmit ({ userName, password }) {
+      console.log( '点击登陆' )
+      // Cookies.set('token', 'admin', { expires: 1 || 1 })
       this.handleLogin({ userName, password }).then(res => {
         this.getUserInfo().then(res => {
           this.$router.push({
